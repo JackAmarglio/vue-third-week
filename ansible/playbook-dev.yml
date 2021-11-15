@@ -1,0 +1,19 @@
+---
+- name: update server
+  hosts: SERVER_DEV
+  become: yes
+
+  tasks:
+
+  - name: update file
+    git:
+      repo: 'ssh://git@gitlab.its-dev.ru:2224/local_market/frontend-merchant.git'
+      dest: /var/app/local-market/frontend-merchant
+      update: yes
+      force: yes
+      version: "master"
+  - name: docker-compose update
+    shell: cd /var/app/local-market/frontend-merchant; docker-compose up -d 
+  - name: cleaning of memory
+    shell: docker image prune -f
+
