@@ -15,7 +15,6 @@
     <div class="contact3">
       <p class="footer-title1">You can follow us:</p>
       <div class="social-site">
-        <i class="fa fa-behance"></i>
         <font-awesome-icon icon="basketball-ball" />
         <v-icon style="color: white">mdi-instagram</v-icon>
         <v-icon style="color: white">mdi-twitter</v-icon>

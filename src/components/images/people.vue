@@ -5,9 +5,6 @@
       <div class="name">{{ man.name }}</div>
       <div class="job">{{ man.job }}</div>
       <div class="icons">
-        <div class="behance">
-          <i class="fa fa-behance"></i>
-        </div>
         <div><font-awesome-icon icon="basketball-ball" /></div>
         <v-icon style="color: white">mdi-instagram</v-icon>
       </div>

@@ -18,14 +18,14 @@ if (token) {
 Vue.config.productionTip = false
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDyMek-Ac82zXhuGVkhT0S9nnrYWsy27nY",
-  authDomain: "local-market-15e67.firebaseapp.com",
-  databaseURL: "https://local-market-15e67.firebaseio.com",
-  projectId: "local-market-15e67",
-  storageBucket: "local-market-15e67.appspot.com",
-  messagingSenderId: "216415012178",
-  appId: "1:216415012178:web:6e0b7c75d3883454c1668b",
-  measurementId: "G-7GFV0PCKTW"
+  apiKey: "AIzaSyC4AzdkR94Rp2F6WZ_ODOoDa5k55TWmyXY",
+  authDomain: "first-project-881e9.firebaseapp.com",
+  databaseURL: "https://first-project-881e9-default-rtdb.firebaseio.com",
+  projectId: "first-project-881e9",
+  storageBucket: "first-project-881e9.appspot.com",
+  messagingSenderId: "297059815089",
+  appId: "1:297059815089:web:fbcdd6c408bddf8bbd5c90",
+  measurementId: "G-44L1EVV51Y"
 };
 
 firebase.initializeApp(firebaseConfig);

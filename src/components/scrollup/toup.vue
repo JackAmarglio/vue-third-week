@@ -1,5 +1,5 @@
 <template>
-  <div class="scrolltoup">
+  <div :class="[{scrolltoup : visible}]">
     <button
       v-bind:style="[visible ? { display: inline } : { display: none }]"
       @click="this.scroll"
@@ -30,8 +30,8 @@ export default {
         behavior: "smooth",
       });
     },
-    toggleVisible: function () {
-      const scrolled = window.pageYOffset;
+    toggleVisible () {
+      const scrolled = window.scrollY;
       if (scrolled > 800) {
         this.visible = true;
       } else if (scrolled <= 800) {

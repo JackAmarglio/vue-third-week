@@ -89,21 +89,20 @@ export default new Vuex.Store({
             commit("setApiProcessing", true);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: process.env.VUE_APP_API_URL + "/partners/login",
+                    url: "http://localhost:8000/api/login",
                     data: user,
                     method: "POST",
                 })
                     .then((resp) => {
+                        console.log(resp);
                         const data = resp.data;
-                        if (data.success) {
-                            const token = `${data.data.token_type} ${data.data.access_token}`;
-                            const user = data.data.user;
-                            localStorage.setItem("token", token);
-                            axios.defaults.headers.common["Authorization"] = token;
-                            commit("auth_success", token, user);
-                            commit("setApiProcessing", false);
-                            resolve(true);
-                        }
+                        const token = data.token;
+                        const user = data.user;
+                        localStorage.setItem("token", token);
+                        axios.defaults.headers.common["Authorization"] = token;
+                        commit("auth_success", token, user);
+                        commit("setApiProcessing", false);
+                        resolve(true);
                     })
                     .catch((err) => {
                         localStorage.removeItem("token");
@@ -116,23 +115,23 @@ export default new Vuex.Store({
             commit("setApiProcessing", true);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: "http://localhost:3000/register",
+                    url: "http://localhost:8000/api/register",
                     data: user,
                     method: "POST",
                 })
                     .then((resp) => {
-                        const token = resp.data.token;
-                        const user = resp.data.user;
-                        localStorage.setItem("token", token);
+                        // const token = resp.data.token;
+                        // const user = resp.data.user;
+                        // localStorage.setItem("token", token);
                         // Add the following line:
-                        axios.defaults.headers.common["Authorization"] = token;
-                        commit("auth_success", token, user);
+                        // axios.defaults.headers.common["Authorization"] = token;
+                        // commit("auth_success", token, user);
                         commit("setApiProcessing", false);
                         resolve(resp);
                     })
                     .catch((err) => {
                         commit("setApiProcessing", false);
-                        localStorage.removeItem("token");
+                        // localStorage.removeItem("token");
                         reject(err);
                     });
 
