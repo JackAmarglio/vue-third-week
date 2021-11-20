@@ -37,7 +37,7 @@ let router = new Router({
       component: SendRequestEmail
     },
     {
-      path: "/forgotpassword",
+      path: "/forgotpassword/:token",
       name: "forgotpassword",
       component: ForgotPassword
     }

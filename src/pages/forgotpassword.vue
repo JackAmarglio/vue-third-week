@@ -33,10 +33,11 @@ export default {
         resetpassword() {
             axios({
                 url: "http://localhost:8000/api/changepassword",
-                data: this.email,
+                data: {token:this.$route.params.token, password: this.password},
                 method: "POST"
             })
             .then(() => this.$router.push("/"))
+            .catch((err) => console.log(err))
         }
     }
 }
