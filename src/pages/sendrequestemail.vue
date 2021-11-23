@@ -36,7 +36,7 @@ export default {
   methods: {
       sendrequest() {
         axios({
-            url: "https://byself-laravel.herokuapp.com/api/resetpassword",
+            url: "http://localhost:8000/api/resetpassword",
             data: {email: this.email},
             method: "POST"
         })

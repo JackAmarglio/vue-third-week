@@ -32,7 +32,7 @@ export default {
     methods: {
         resetpassword() {
             axios({
-                url: "https://byself-laravel.herokuapp.com/api/changepassword",
+                url: "http://localhost:8000/api/changepassword",
                 data: {token:this.$route.params.token, password: this.password},
                 method: "POST"
             })

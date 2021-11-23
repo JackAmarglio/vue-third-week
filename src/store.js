@@ -89,7 +89,7 @@ export default new Vuex.Store({
             commit("setApiProcessing", true);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: "https://byself-laravel.herokuapp.com/api/login",
+                    url: "http://localhost:8000/api/login",
                     data: user,
                     method: "POST",
                 })
@@ -115,7 +115,7 @@ export default new Vuex.Store({
             commit("setApiProcessing", true);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: "https://byself-laravel.herokuapp.com/api/register",
+                    url: "http://localhost:8000/api/register",
                     data: user,
                     method: "POST",
                 })
