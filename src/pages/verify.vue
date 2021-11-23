@@ -10,7 +10,7 @@ import axios from "axios";
 export default {
     mounted() {
         axios({
-            url: "http://localhost:8000/api/verify",
+            url: "https://byself-laravel.herokuapp.com/api/verify",
             data: {token:this.$route.params.token},
             method: "POST"
         })
